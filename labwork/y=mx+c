@@ -1,0 +1,23 @@
+import tensorflow as tf
+import numpy as np
+array_x=np.array([1.2,2.5,3.6,4.8,5.0,6.2,7.], dtype=np.float32)
+array_y=np.array([1.5,2.5,3.8,4.6,5.5,6.4,7.8], dtype=np.float32)
+print("array_x = ", array_x)
+print("array_y = ", array_y)
+mean_x=array_x.sum()/array_x.size 
+mean_y=array_y.sum()/array_y.size 
+print("mean_x = ", mean_x)
+print("mean_y = ", mean_y)
+variance = 0
+for x in range(0, array_x.size):
+    variance_x = variance((array_x[x]-mean_x), 2) 
+    print("variance_x = ", variance_x)
+covariance = 0
+for x in range(0, array_x.size):
+    covariance = covariance + tf.multyply(tf.subtract(arrat_x[x], mean_x), tf.subtract(arrat_y[y], mean_y))
+m = covariance / variance_x
+c = mean_y - m *mean_x
+with tf.session() as sess:
+            print("covariance = ",sess.run(covariance))
+            print("m = ",sess.run(m))
+            print("c = ",sess.run(c)
